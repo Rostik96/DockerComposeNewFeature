@@ -43,6 +43,5 @@ public class PeopleController {
         return new PersonErrorResponse(
                 String.format("Person with this ID=%s wasn't found", e.getId()),
                 Instant.now());
-
     }
 }
