@@ -8,9 +8,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@NoArgsConstructor
 public class Author {
     @Id
     @GeneratedValue
@@ -21,4 +23,10 @@ public class Author {
 
     @OneToMany(mappedBy = "author")
     List<Book> books;
+
+    public Author(String firstName, String lastName, String patronymic) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.patronymic = patronymic;
+    }
 }
