@@ -1,10 +1,10 @@
 package dev.rost.dc.model;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -24,8 +24,8 @@ public class Person {
     UUID id;
     String name;
     int age;
-    @ManyToMany
-    @JoinTable(name = "book_person",
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    @JoinTable(name = "person_book",
     joinColumns = @JoinColumn(name = "person_id"),
     inverseJoinColumns = @JoinColumn(name = "book_id"))
     List<Book> books;

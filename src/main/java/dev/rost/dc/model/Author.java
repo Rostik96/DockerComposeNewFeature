@@ -3,7 +3,6 @@ package dev.rost.dc.model;
 import java.util.List;
 import java.util.UUID;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -11,7 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Entity
+//@Entity
 @NoArgsConstructor
 public class Author {
     @Id
